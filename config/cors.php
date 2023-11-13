@@ -31,4 +31,13 @@ return [
 
     'supports_credentials' => false,
 
+    'paths' => [
+        'v1/*' => [
+            'allowedOrigins' => ['*'],
+            'allowedHeaders' => ['*'],
+            'allowedMethods' => ['*'],
+            'maxAge' => 3600,
+        ],
+    ],
+
 ];

@@ -15,3 +15,4 @@ href="https://themewagon.github.io/jobfinderportal/assets/img/favicon.ico">
 <link rel="stylesheet" href="https://themewagon.github.io/jobfinderportal/assets/css/slick.css">
 <link rel="stylesheet" href="https://themewagon.github.io/jobfinderportal/assets/css/nice-select.css">
 <link rel="stylesheet" href="https://themewagon.github.io/jobfinderportal/assets/css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"/>

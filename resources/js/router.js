@@ -7,6 +7,8 @@ import About from "./Pages/Website/About.vue";
 import Company from "./Pages/Website/Company.vue";
 import Contact from "./Pages/Website/Contact.vue";
 import Jobs from "./Pages/Website/Jobs.vue";
+// Admin  Routes
+import CompanyVue from "./Pages/Adminpanel/Catgeory.vue";
 const routes = [
     {
         path: "/",
@@ -42,6 +44,11 @@ const routes = [
         path: "/findjob",
         name: "Jobs",
         component: Jobs,
+    },
+    {
+        path: "/companycategory",
+        name: "CompanyVue",
+        component: CompanyVue,
     },
 ];
 
