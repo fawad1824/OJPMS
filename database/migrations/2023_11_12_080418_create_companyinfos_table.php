@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('pay');
             $table->string('vacancy');
             $table->string('desc');
-            $table->string('companyid');
+            $table->unsignedBigInteger('companyid')->nullable();
+            $table->foreign('companyid')->references('id')->on('companymains');
             $table->timestamps();
         });
     }

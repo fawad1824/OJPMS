@@ -23,7 +23,8 @@ return new class extends Migration
             $table->string('state');
             $table->string('city');
             $table->string('status');
-            $table->string('userid');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
