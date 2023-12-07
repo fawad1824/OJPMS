@@ -69,7 +69,6 @@ export default {
 <style scoped>
 #login .container #login-row #login-column #login-box {
     max-width: 600px;
-    height: 320px;
     border: 1px solid #9c9c9c;
     background-color: #eaeaea;
 }

@@ -17,7 +17,9 @@ return new class extends Migration
             $table->unsignedBigInteger('jobid')->nullable();
             $table->unsignedBigInteger('userid')->nullable();
             $table->string('status');
-            $table->foreign('companyid')->references('id')->on('companymains');
+            $table->string('date');
+            $table->string('desc');
+            $table->foreign('companyid')->references('id')->on('company');
             $table->foreign('jobid')->references('id')->on('jobs');
             $table->foreign('userid')->references('id')->on('users');
             $table->timestamps();

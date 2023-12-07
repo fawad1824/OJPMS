@@ -20,15 +20,15 @@ return new class extends Migration
             $table->string('location');
             $table->string('vacancy');
             $table->string('jobtype');
-            $table->string('salary');            
+            $table->string('salary');
             $table->string('date');
             $table->string('applicationdate');
             $table->string('status');
 
             $table->unsignedBigInteger('companyid')->nullable();
             $table->unsignedBigInteger('userid')->nullable();
-            
-            $table->foreign('companyid')->references('id')->on('companymains');
+
+            $table->foreign('companyid')->references('id')->on('company');
             $table->foreign('userid')->references('id')->on('users');
             $table->timestamps();
         });

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('companymains', function (Blueprint $table) {
+        Schema::create('company', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email');
@@ -23,6 +23,10 @@ return new class extends Migration
             $table->string('state');
             $table->string('city');
             $table->string('status');
+            $table->string('date');
+            $table->string('pay');
+            $table->string('employe');
+            $table->string('desc');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
@@ -34,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('companymains');
+        Schema::dropIfExists('company');
     }
 };

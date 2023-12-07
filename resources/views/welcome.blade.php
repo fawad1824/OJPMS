@@ -46,5 +46,4 @@
     @vite('resources/js/app.js')
     @include('Footer')
 </body>
-
 </html>

@@ -91,10 +91,10 @@
                                                     id="newsletter-submit"
                                                     class="email_icon newsletter-submit button-contactForm"
                                                 >
-                                                    <img
+                                                    <!-- <img
                                                         src="assets/img/icon/form.png"
                                                         alt=""
-                                                    />
+                                                    /> -->
                                                 </button>
                                             </div>
                                             <div class="mt-10 info"></div>

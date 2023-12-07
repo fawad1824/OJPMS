@@ -161,10 +161,10 @@
                         >
                             <h3 class="widget_title">Recent Job</h3>
                             <div class="media post_item">
-                                <img
+                                <!-- <img
                                     src="assets/img/post/post_1.png"
                                     alt="post"
-                                />
+                                /> -->
                                 <div class="media-body">
                                     <a href="single-blog.html">
                                         <h3>From life was you fish...</h3>
