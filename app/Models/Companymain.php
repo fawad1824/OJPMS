@@ -8,18 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Companymain extends Model
 {
     use HasFactory;
-    protected $table = "companymains";
+    protected $table = "company";
     protected $fillable = [
         'name',
         'email',
         'website',
         'companyinfo',
-        'userid',
         'address',
         'location',
         'country',
         'state',
+        'city',
         'status',
-        'city'
+        'date',
+        'employe',
+        'desc',
+        'image',
     ];
 }

@@ -19,20 +19,41 @@ use Illuminate\Support\Facades\Route;
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::post('register-candidate', [AuthController::class, 'registerCondidate']);
+Route::post('register-vendor', [AuthController::class, 'registerVendor']);
+
+Route::post('login-candidate', [AuthController::class, 'loginCondidate']);
+Route::post('login-vendor', [AuthController::class, 'loginVendor']);
+Route::post('login-admin', [AuthController::class, 'loginAdmin']);
+
+
+Route::get('get-country', [APIController::class, 'GetCountry']);
+Route::get('get-state/{id}', [APIController::class, 'GetState']);
+Route::get('get-cities/{id}', [APIController::class, 'GetCities']);
+
+Route::middleware('jwt.auth')->get('/auth/check', function () {
+    return ['status' => true]; // Assuming you want to return a simple status indicating authentication validity
 });
-// In routes/api.php or similar
-Route::middleware('jwt.auth')->group(function () {
+
+Route::group(['middleware' => ['jwt.auth', 'throttle:60,1']], function () {
 
     // Category
     Route::get('get-category', [APIController::class, 'GetCategory']);
     Route::post('add-category', [APIController::class, 'AddCategory']);
     Route::post('edit-category/{id}', [APIController::class, 'EditCategory']);
-    Route::post('delete-category/{id}', [APIController::class, 'DeleteCategory']);
+    Route::delete('delete-category/{id}', [APIController::class, 'DeleteCategory']);
 
-    Route::get('get-country', [APIController::class, 'GetCountry']);
-    Route::get('get-state/{id}', [APIController::class, 'GetState']);
-    Route::get('get-cities/{id}', [APIController::class, 'GetCities']);
+    // Company
+    Route::get('get-conpanies', [APIController::class, 'GetCompany']);
+    Route::post('add-conpanies', [APIController::class, 'AddCompany']);
+    Route::post('edit-conpanies/{id}', [APIController::class, 'editCompany']);
+    Route::delete('delete-conpanies/{id}', [APIController::class, 'deleteCompany']);
 
+    // Jobs
+    Route::get('get-all-jobs', [APIController::class, 'GetJobs']);
+    Route::get('get-jobs/{id}', [APIController::class, 'GetUsersJobs']);
+    Route::post('add-jobs', [APIController::class, 'AddJobs']);
+    Route::post('edit-jobs/{id}', [APIController::class, 'editJobs']);
+    Route::delete('delete-jobs/{id}', [APIController::class, 'deleteJObs']);
 });

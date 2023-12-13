@@ -4,7 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Company;
+use App\Models\Companymain;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -92,5 +94,75 @@ class APIController extends Controller
     public function GetCities($id)
     {
         return DB::table('cities')->where('state_id', $id)->get();
+    }
+
+    // Company API
+    public function GetCompany()
+    {
+        return $company = Companymain::all();
+    }
+    public function AddCompany(Request $request)
+    {
+        $company = new Companymain();
+        $company->name = $request->name;
+        $company->email = $request->email;
+        $company->website = $request->website;
+        $company->companyinfo = $request->companyinfo;
+        $company->address = $request->address;
+        $company->location = $request->location;
+        $company->country = $request->country;
+        $company->state = $request->state;
+        $company->city = $request->city;
+        $company->status = $request->status;
+        $company->date = $request->date;
+        $company->employe = $request->employe;
+        $company->desc = $request->desc;
+        $company->status = "active";
+        $company->user_id = Auth::user()->id;
+
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $imagePath = $request->file('image')->store('images', 'public');
+
+            // Get the full URL of the stored image
+            $imageUrl =  'storage/' . $imagePath;
+        }
+        $company->image = asset('') . $imageUrl;
+        $company->save();
+        return response()->json(['message' => 'Company Added successfully', 'company' => $company]);
+    }
+    public function editCompany(Request $request, $id)
+    {
+        $company = Companymain::where('id', $id)->first();
+        $company->name = $request->name;
+        $company->email = $request->email;
+        $company->website = $request->website;
+        $company->companyinfo = $request->companyinfo;
+        $company->address = $request->address;
+        $company->location = $request->location;
+        $company->country = $request->country;
+        $company->state = $request->state;
+        $company->city = $request->city;
+        $company->status = $request->status;
+        $company->date = $request->date;
+        $company->employe = $request->employe;
+        $company->desc = $request->desc;
+        $company->status = "active";
+        $company->user_id = Auth::user()->id;
+
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $imagePath = $request->file('image')->store('images', 'public');
+
+            // Get the full URL of the stored image
+            $imageUrl =  'storage/' . $imagePath;
+        }
+        $company->image = asset('') . $imageUrl;
+        $company->save();
+        return response()->json(['message' => 'Company Updated successfully', 'company' => $company]);
+    }
+
+    public function deleteCompany($id)
+    {
+        Companymain::where('id', $id)->delete();
+        return response()->json(['message' => 'Company Deleted successfully']);
     }
 }

@@ -1,16 +1,16 @@
 // modules/decrement.js
 
 const state = {
-  token: "",
-  userName: "",
+  token: localStorage.getItem('Token'),
+  user: localStorage.getItem('Users'),
 };
 
 const mutations = {
   setToken(state, token) {
     state.token = token;
   },
-  setUserName(state, userName) {
-    state.userName = userName;
+  setUser(state, user) {
+    state.user = user;
   },
 };
 

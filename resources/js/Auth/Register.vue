@@ -11,16 +11,16 @@
                         <form
                             id="login-form"
                             class="form"
-                            action=""
-                            method="post"
+                            @submit.prevent="registerUser"
                         >
                             <h3 class="text-center text-info">Register</h3>
                             <div class="form-group">
-                                <label for="Name" class="text-info">Name:</label
+                                <label for="name" class="text-info">Name:</label
                                 ><br />
                                 <input
+                                    required
+                                    v-model="formData.name"
                                     type="text"
-                                    name="name"
                                     id="name"
                                     class="form-control"
                                 />
@@ -30,38 +30,46 @@
                                     >Email:</label
                                 ><br />
                                 <input
+                                    required
+                                    v-model="formData.email"
                                     type="email"
-                                    name="email"
                                     id="email"
                                     class="form-control"
                                 />
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="text-info"
-                                    >Role:</label
-                                ><br />
-                                <input
-                                    type="text"
-                                    name="role"
-                                    id="role"
-                                    class="form-control"
-                                />
+                                <span
+                                    style="color: red"
+                                    class="error"
+                                    v-if="formErrors.email"
+                                    >{{ formErrors.email }}</span
+                                >
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info"
                                     >Password:</label
                                 ><br />
                                 <input
-                                    type="text"
-                                    name="password"
+                                    required
+                                    v-model="formData.password"
+                                    type="password"
                                     id="password"
                                     class="form-control"
                                 />
                             </div>
+                            <div class="form-group">
+                                <label for="role" class="text-info">Role:</label
+                                ><br />
+                                <select
+                                    required
+                                    v-model="formData.role"
+                                    class="form-control"
+                                >
+                                    <option value="2">Vendor</option>
+                                    <option value="3">Job Seekers</option>
+                                </select>
+                            </div>
                             <div class="form-group mt-3">
                                 <input
                                     type="submit"
-                                    name="Register"
                                     class="btn btn-info btn-md"
                                     value="Register"
                                 />
@@ -75,8 +83,44 @@
 </template>
 
 <script>
+import axios from "axios";
+import Swal from "sweetalert2"; // Import SweetAlert2
+
 export default {
-    // Registration component logic goes here
+    data() {
+        return {
+            formData: {
+                name: "",
+                email: "",
+                password: "",
+                role: "Vendor", // Set a default role if needed
+            },
+            formErrors: {}, // To store form validation errors
+        };
+    },
+    methods: {
+        registerUser() {
+            axios
+                .post("/api/register", this.formData)
+                .then((response) => {
+                    // Handle success, maybe show a success message
+                    Swal.fire({
+                        icon: "success",
+                        title: "Successful!",
+                        text: "Registration Successful!",
+                    });
+                    console.log("User registered:", response.data.user);
+                })
+                .catch((error) => {
+                    error.response.data.email
+                        ? (this.formErrors.email =
+                              error.response.data.email[0])
+                        : "";
+
+                    console.error("Registration failed:", error.response.data.email);
+                });
+        },
+    },
 };
 </script>
 

@@ -22,9 +22,9 @@ return new class extends Migration
             $table->string('country');
             $table->string('state');
             $table->string('city');
+            $table->string('image');
             $table->string('status');
             $table->string('date');
-            $table->string('pay');
             $table->string('employe');
             $table->string('desc');
             $table->unsignedBigInteger('user_id')->nullable();
