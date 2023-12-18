@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -16,12 +18,18 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/{any}', function () {
-    return view('welcome');
-})->where("any", ".*");
+
 
 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+// Website Links
+Route::get('/', [WebsiteController::class, 'HomeIndex'])->name('index');
+Route::get('/companies', [WebsiteController::class, 'companies'])->name('companies');
+Route::get('/find-jobs', [WebsiteController::class, 'FindJobs'])->name('FindJobs');
+Route::get('/contact', [WebsiteController::class, 'contact'])->name('contact');
+Route::get('/about', [WebsiteController::class, 'about'])->name('about');
+Route::get('/jobs/{id}', [WebsiteController::class, 'GetJobs'])->name('GetJobs');
