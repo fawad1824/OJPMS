@@ -3,158 +3,112 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OJPMS</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Themesdesign" />
 
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    @include('website.Global.Header')
 
-    <link rel="stylesheet" href="{{ asset('Admin/styles.css') }}">
-    <meta name="robots" content="noindex, follow">
 </head>
 
 <body>
-    <div class="main">
-        <style>
-            span.invalid-feedback {
-                color: red;
-                font-size: 10px;
-                font-weight: 200;
-            }
-        </style>
-        <section class="sign-in">
-            <div class="container">
-                <div class="signin-content">
-                    <div class="signin-image">
-                        <figure><img src="{{ asset('Admin/signin-image.jpeg') }}" alt="sing up image"></figure>
-                        <a href="/register" class="signup-image-link">Create an account</a>
-                    </div>
-                    <div class="signin-form">
-                        <h2 class="form-title">Login</h2>
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
-                            <div class="form-group">
-                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Enter Email"
-                                    class="form-control @error('email') is-invalid @enderror" name="email"
-                                    value="{{ old('email') }}" required autocomplete="email" autofocus />
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" placeholder="Password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password"
-                                    required autocomplete="current-password" />
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
-                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember
-                                    me</label>
-                            </div>
-                            <div class="form-group form-button">
-
-                                <button type="submit" name="signin" id="signin" class="form-submit">
-                                    {{ __('Login') }}
-                                </button>
-
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
-        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
-        data-cf-beacon='{"rayId":"8379355bc9775f90","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
-
-
-{{-- @extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
             </div>
         </div>
     </div>
-</div>
-@endsection --}}
+    <!-- Loader -->
+
+    <div class="back-to-home rounded d-none d-sm-block">
+        <a href="/" class="text-white rounded d-inline-block text-center"><i class="mdi mdi-home"></i></a>
+    </div>
+
+    <!-- Hero Start -->
+    <section class="vh-100"
+        style="background: url('https://via.placeholder.com/2000X1333//88929f/5a6270C/O https://placeholder.com/') center center;">
+
+        <div class="home-center">
+            <div class="home-desc-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="login-page bg-white shadow rounded p-4">
+                                <div class="text-center">
+                                    <h4 class="mb-4">Login</h4>
+                                </div>
+                                <form method="POST" action="{{ route('login') }}">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group position-relative">
+                                                <label>Your Email <span class="text-danger">*</span></label>
+                                                <input id="email" type="email"
+                                                    class="form-control @error('email') is-invalid @enderror"
+                                                    name="email" value="{{ old('email') }}" required
+                                                    autocomplete="email" autofocus>
+
+                                                @error('email')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <div class="form-group position-relative">
+                                                <label>Password <span class="text-danger">*</span></label>
+                                                <input id="password" type="password"
+                                                    class="form-control @error('password') is-invalid @enderror"
+                                                    name="password" required autocomplete="current-password">
+
+                                                @error('password')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <p class="float-right forgot-pass"><a href="recovery_passward.html"
+                                                    class="text-dark font-weight-bold">Forgot password ?</a></p>
+                                            <div class="form-group">
+                                                <div class="custom-control m-0 custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="customCheck1">
+                                                    <label class="custom-control-label" for="customCheck1">Remember
+                                                        me</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 mb-0">
+                                            <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                                        </div>
+
+                                        <div class="col-12 text-center">
+                                            <p class="mb-0 mt-3"><small class="text-dark mr-2">Don't have an account
+                                                    ?</small> <a href="/register"
+                                                    class="text-dark font-weight-bold">Sign Up</a></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div><!---->
+                        </div> <!--end col-->
+                    </div><!--end row-->
+                </div> <!--end container-->
+            </div>
+        </div>
+    </section><!--end section-->
+    <!-- Hero End -->
+
+    @include('website.Global.Footer')
+</body>
+
+</html>

@@ -1,13 +1,20 @@
+<link rel="shortcut icon" href="{{ asset('website/images/favicon.ico') }}">
 
-<link rel="stylesheet" href="{{ asset('website/assets/css/bootstrap.min.css') }}">
-<link rel="stylesheet" href="{{ asset('website/assets/css/owl.carousel.min.css') }}">
-<link rel="stylesheet" href="{{ asset('website/assets/css/flaticon.css') }}">
-<link rel="stylesheet" href="{{ asset('website/assets/css/price_rangs.css') }}">
-<link rel="stylesheet" href="{{ asset('website/assets/css/slicknav.css') }}">
-<link rel="stylesheet" href="{{ asset('website/assets/css/animate.min.css') }}">
-<link rel="stylesheet" href="{{ asset('website/assets/css/magnific-popup.css') }}">
-<link rel="stylesheet" href="{{ asset('website/assets/css/fontawesome-all.min.css') }}">
-<link rel="stylesheet" href="{{ asset('website/assets/css/themify-icons.css') }}">
-<link rel="stylesheet" href="{{ asset('website/assets/css/slick.css') }}">
-<link rel="stylesheet" href="{{ asset('website/assets/css/nice-select.css') }}">
-<link rel="stylesheet" href="{{ asset('website/assets/css/style.css') }}">
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="{{ asset('website/css/bootstrap.min.css') }}" type="text/css">
+
+<!--Material Icon -->
+<link rel="stylesheet" type="text/css" href="{{ asset('website/css/materialdesignicons.min.css') }}" />
+
+<link rel="stylesheet" type="text/css" href="{{ asset('website/css/fontawesome.css') }}" />
+
+<!-- selectize css -->
+<link rel="stylesheet" type="text/css" href="{{ asset('website/css/selectize.css') }}" />
+
+<!--Slider-->
+<link rel="stylesheet" href="{{ asset('website/css/owl.carousel.css') }}" />
+<link rel="stylesheet" href="{{ asset('website/css/owl.theme.css') }}" />
+<link rel="stylesheet" href="{{ asset('website/css/owl.transitions.css') }}" />
+
+<!-- Custom  Css -->
+<link rel="stylesheet" type="text/css" href="{{ asset('website/css/style.css') }}" />

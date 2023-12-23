@@ -3,6 +3,149 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OJPMS</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Themesdesign" />
+
+    @include('website.Global.Header')
+
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Loader -->
+
+    <div class="back-to-home rounded d-none d-sm-block">
+        <a href="/" class="text-white rounded d-inline-block text-center"><i class="mdi mdi-home"></i></a>
+    </div>
+
+    <!-- Hero Start -->
+    <section class="vh-100"
+        style="background: url('https://via.placeholder.com/2000X1333//88929f/5a6270C/O https://placeholder.com/') center center;">
+        <div class="home-center">
+            <div class="home-desc-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="login_page bg-white shadow rounded p-4">
+                                <div class="text-center">
+                                    <h4 class="mb-4">Signup</h4>
+                                </div>
+                                <form method="POST" action="{{ route('register') }}">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group position-relative">
+                                                <label>name <span class="text-danger">*</span></label>
+                                                <input placeholder="Enter Name" id="name" type="text"
+                                                    class="form-control @error('name') is-invalid @enderror"
+                                                    name="name" value="{{ old('name') }}" required
+                                                    autocomplete="name" autofocus>
+                                                @error('name')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group position-relative">
+                                                <label>Your Email <span class="text-danger">*</span></label>
+                                                <input placeholder="Enter Email" id="email" type="email"
+                                                    class="form-control @error('email') is-invalid @enderror"
+                                                    name="email" value="{{ old('email') }}" required
+                                                    autocomplete="email">
+                                                @error('email')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group position-relative">
+                                                <label>Role <span class="text-danger">*</span></label>
+                                                <select name="role_id" id="role_id" class="form-control role_id">
+                                                    <option value="1">Vendor</option>
+                                                    <option value="2">Job Seckers</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group position-relative">
+                                                <label>Password <span class="text-danger">*</span></label>
+                                                <input placeholder="Enter Password" id="password" type="password"
+                                                    class="form-control @error('password') is-invalid @enderror"
+                                                    name="password" required autocomplete="new-password">
+
+                                                @error('password')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group position-relative">
+                                                <label>Confirm Password <span class="text-danger">*</span></label>
+                                                <input placeholder="Confirm Password" id="password-confirm"
+                                                    type="password" class="form-control" name="password_confirmation"
+                                                    required autocomplete="new-password">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="custom-control m-0 custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="customCheck1">
+                                                    <label class="custom-control-label" for="customCheck1">I Accept <a
+                                                            href="#" class="text-primary">Terms And
+                                                            Condition</a></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-primary w-100">Register</button>
+                                        </div>
+
+                                        <div class="mx-auto">
+                                            <p class="mb-0 mt-3"><small class="text-dark mr-2">Already have an account
+                                                    ?</small> <a href="/login"
+                                                    class="text-dark font-weight-bold">Sign
+                                                    in</a></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div> <!--end col-->
+                    </div><!--end row-->
+                </div> <!--end container-->
+            </div>
+        </div>
+    </section><!--end section-->
+    <!-- Hero End -->
+    @include('website.Global.Footer')
+
+</body>
+
+</html>
+
+
+{{-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register</title>
@@ -105,4 +248,4 @@ span.invalid-feedback {
         crossorigin="anonymous"></script>
 </body>
 
-</html>
+</html> --}}

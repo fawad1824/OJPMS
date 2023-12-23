@@ -1,135 +1,144 @@
 @extends('layouts.web')
 @section('content')
-<style>
-    :root {
-        --background-image-url: url('http://127.0.0.1:8000/website/assets/img/hero/h1_hero.jpg');
-        --background-image-url2: url('http://127.0.0.1:8000/website/assets/img/gallery/cv_bg.jpg');
-    }
+    <!-- Start home -->
+    <section class="bg-half page-next-level">
+        <div class="bg-overlay"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="text-center text-white">
+                        <h4 class="text-uppercase title mb-4">About Us</h4>
+                        <ul class="page-next d-inline-block mb-0">
+                            <li><a href="index.html" class="text-uppercase font-weight-bold">Home</a></li>
+                            <li><a href="#" class="text-uppercase font-weight-bold">Pages</a></li>
+                            <li>
+                                <span class="text-uppercase text-white font-weight-bold">About</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end home -->
 
-    .element-with-background {
-        /* Use the CSS variable as the background */
-        background-image: var(--background-image-url);
-        /* Other styling */
-        width: 100%;
-        height: 300px;
-    }
+    <!-- ABOUT US START -->
+    <section class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-4">
+                    <img src="https://via.placeholder.com/800X800//88929f/5a6270C/O https://placeholder.com/"
+                        class="img-fluid rounded shadow" alt="">
+                </div>
 
-    .element-with-background2 {
-        /* Use the CSS variable as the background */
-        background-image: var(--background-image-url2);
-        /* Other styling */
-        width: 100%;
-    }
-</style>
-        <!-- Hero Area Start-->
-        <div class="slider-area ">
-            <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="assets/img/hero/about.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap text-center">
-                                <h2>About us</h2>
+                <div class="col-lg-7 col-md-8">
+                    <div class="about-desc ml-lg-4">
+                        <h4 class="text-dark">About us</h4>
+
+                        <p class="text-muted">Aenean eros et nisl sagittis as vestibulum at Nullam nulla eros ultricies site
+                            amet nonummy id imperdiet feugiat pede as Sed lectuse Donec mollis hendrerit Phasellus at nec
+                            sem in at pellentesque facilisis at Praesent congue erat at massa Sed sit cursus turpis vitae
+                            tortor that a Donec posuere as vulputate arcu Phasellus accumsan velit.</p>
+
+                        <p class="text-muted">Maecenas tempus tellus eget as that condimentum rhoncus sem quam semper libero
+                            amete adipiscing sem neque sed ipsum Nam quam nunce blandit at luctus pulvinar hendrerit id
+                            lorem Maecenas nec et ante tincidunt tempus.</p>
+
+                        <p class="text-muted">Sed consequat leo eget bibendum sodales augue at velit cursus nunc.</p>
+
+                        <a href="javascript:void(0)" class="btn btn-primary">Apply now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ABOUT US END -->
+
+    <!-- COUNTER START -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="blog-post-counter">
+                <div class="row" id="counter">
+                    <div class="col-md-3 col-6 border-right">
+                        <div class="p-4">
+                            <div class="blog-post counter-content text-center">
+                                <h1 class="counter-value font-weight-light text-dark mb-2" data-count="2030">0</h1>
+                                <p class="counter-name text-muted f-15 text-uppercase mb-2">Jobs</p>
+                                <i class="mdi mdi-account-multiple h3 text-muted"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-6 border-right">
+                        <div class="p-4">
+                            <div class="blog-post counter-content text-center">
+                                <h1 class="counter-value font-weight-light text-dark mb-2" data-count="3500">0</h1>
+                                <p class="counter-name text-muted f-15 text-uppercase mb-2">Applications</p>
+                                <i class="mdi mdi-file h3 text-muted"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-6 border-right">
+                        <div class="p-4">
+                            <div class="blog-post counter-content text-center">
+                                <h1 class="counter-value font-weight-light text-dark mb-2" data-count="1250">0</h1>
+                                <p class="counter-name text-muted f-15 text-uppercase mb-2">Companies</p>
+                                <i class="mdi mdi-bank h3 text-muted"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="p-4">
+                            <div class="blog-post counter-content text-center">
+                                <h1 class="counter-value font-weight-light text-dark mb-2" data-count="4000">0</h1>
+                                <p class="counter-name text-muted f-15 text-uppercase mb-2">Employers</p>
+                                <i class="mdi mdi-account-group h3 text-muted"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
-            <!-- Hero Area End -->
-            <!-- Support Company Start-->
-            <div class="support-company-area fix section-padding2">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="right-caption">
-                                <!-- Section Tittle -->
-                                <div class="section-tittle section-tittle2">
-                                    <span>What we are doing</span>
-                                    <h2>24k Talented people are getting Jobs</h2>
-                                </div>
-                                <div class="support-caption">
-                                    <p class="pera-top">Mollit anim laborum duis au dolor in voluptate velit ess cillum dolore eu lore dsu quality mollit anim laborumuis au dolor in voluptate velit cillum.</p>
-                                    <p>Mollit anim laborum.Duis aute irufg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur signjnt occa cupidatat non inulpadeserunt mollit aboru. temnthp incididbnt ut labore mollit anim laborum suis aute.</p>
-                                    <a href="about.html" class="btn post-btn">Post a job</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="support-location-img">
-                                <img src="{{ asset('website/assets/img/service/support-img.jpg') }}" alt="">
-                                <div class="support-img-cap text-center">
-                                    <p>Since</p>
-                                    <span>1994</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Support Company End-->
-            <!-- How  Apply Process Start-->
-            <div class="apply-process-area apply-bg pt-150 pb-150" data-background="assets/img/gallery/how-applybg.png">
-                <div class="container">
-                    <!-- Section Tittle -->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section-tittle white-text text-center">
-                                <span>Apply process</span>
-                                <h2 style="color: black"> How it works</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Apply Process Caption -->
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-process text-center mb-30">
-                                <div class="process-ion">
-                                    <span class="flaticon-search"></span>
-                                </div>
-                                <div class="process-cap">
-                                    <h5>1. Search a job</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-process text-center mb-30">
-                                <div class="process-ion">
-                                    <span class="flaticon-curriculum-vitae"></span>
-                                </div>
-                                <div class="process-cap">
-                                    <h5>2. Apply for job</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="single-process text-center mb-30">
-                                <div class="process-ion">
-                                    <span class="flaticon-tour"></span>
-                                </div>
-                                <div class="process-cap">
-                                    <h5>3. Get your job</h5>
-                                </div>
-                            </div>
-                        </div>
+        </div>
+    </section>
+    <!-- COUNTER END -->
+
+
+
+    <!-- ABOUT CLIENTS START -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="section-title text-center mb-4 pb-2">
+                        <h4 class="title title-line pb-5">Our Client's</h4>
+                        <p class="text-muted para-desc mx-auto mb-1">Post a job to tell us about your project. We'll
+                            quickly match you with the right freelancers.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Online CV Area Start -->
-            <div class="online-cv cv-bg section-overly pt-90 pb-120 element-with-background2">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-10">
-                            <div class="cv-caption text-center">
-                                <p class="pera1">FEATURED TOURS Packages</p>
-                                <p class="pera2"> Make a Difference with Your Online Resume!</p>
-                                <a href="#" class="border-btn2 border-btn4">Upload your cv</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row align-items-center">
+                <div class="col-lg-2 col-md-4 col-6 mt-4 pt-2 text-center">
+                    <img src="{{ asset('website/images/clients/1.png') }}" height="50" alt="">
+                </div><!--end col-->
+                <div class="col-lg-2 col-md-4 col-6 mt-4 pt-2 text-center">
+                    <img src="{{ asset('website/images/clients/2.pn') }}g" height="50" alt="">
+                </div><!--end col-->
+                <div class="col-lg-2 col-md-4 col-6 mt-4 pt-2 text-center">
+                    <img src="{{ asset('website/images/clients/3.png') }}" height="50" alt="">
+                </div><!--end col-->
+                <div class="col-lg-2 col-md-4 col-6 mt-4 pt-2 text-center">
+                    <img src="{{ asset('website/images/clients/4.png') }}" height="50" alt="">
+                </div><!--end col-->
+                <div class="col-lg-2 col-md-4 col-6 mt-4 pt-2 text-center">
+                    <img src="{{ asset('website/images/clients/1.png') }}" height="50" alt="">
+                </div><!--end col-->
+                <div class="col-lg-2 col-md-4 col-6 mt-4 pt-2 text-center">
+                    <img src="{{ asset('website/images/clients/2.png') }}" height="50" alt="">
+                </div><!--end col-->
             </div>
-            <!-- Online CV Area End-->
-
-
+        </div>
+    </section>
+    <!-- ABOUT CLIENTS END -->
 @endsection

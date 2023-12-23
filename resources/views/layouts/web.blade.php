@@ -20,7 +20,7 @@
         @yield('content')
 
     </main>
-  @include('layouts.website.Footer')
+    @include('layouts.website.Footer')
 
     <!-- JS here -->
     @include('website.Global.Footer')
