@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('date');
             $table->string('applicationdate');
             $table->string('status');
+            $table->string('experience');
 
             $table->unsignedBigInteger('companyid')->nullable();
             $table->unsignedBigInteger('userid')->nullable();

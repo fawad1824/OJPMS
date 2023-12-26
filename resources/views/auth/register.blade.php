@@ -76,8 +76,8 @@
                                             <div class="form-group position-relative">
                                                 <label>Role <span class="text-danger">*</span></label>
                                                 <select name="role_id" id="role_id" class="form-control role_id">
-                                                    <option value="1">Vendor</option>
-                                                    <option value="2">Job Seckers</option>
+                                                    <option value="vendor">Vendor</option>
+                                                    <option value="job">Job Seckers</option>
                                                 </select>
                                             </div>
                                         </div>

@@ -20,8 +20,11 @@
                 <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
                     <p class="text-white mb-4 footer-list-title">Company</p>
                     <ul class="list-unstyled footer-list">
-                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> About Us</a></li>
-                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Media & Press</a>
+                        <li><a href="/abouts" class="text-foot"><i class="mdi mdi-chevron-right"></i> About Us</a></li>
+                        <li><a href="/find-jobs" class="text-foot"><i class="mdi mdi-chevron-right"></i> Jobs</a></li>
+                        <li><a href="/contact" class="text-foot"><i class="mdi mdi-chevron-right"></i> Jobs</a></li>
+                        <li><a href="/login" class="text-foot"><i class="mdi mdi-chevron-right"></i> Login</a></li>
+                        {{-- <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Media & Press</a>
                         </li>
                         <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Career</a></li>
                         <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Blog</a></li>
@@ -29,7 +32,7 @@
                         <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Marketing</a></li>
                         <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> CEOs </a></li>
                         <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Agencies</a></li>
-                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Our Apps</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Our Apps</a></li> --}}
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
@@ -38,11 +41,11 @@
                         <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Support</a></li>
                         <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Privacy Policy</a>
                         </li>
-                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Terms</a></li>
+                        {{-- <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Terms</a></li>
                         <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Accounting </a>
                         </li>
                         <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Billing</a></li>
-                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> F.A.Q.</a></li>
+                        <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> F.A.Q.</a></li> --}}
                     </ul>
                 </div>
 
@@ -64,8 +67,7 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="">
-                        <p class="mb-0">© 2019 -2020 Jobya. Design with <i class="mdi mdi-heart text-danger"></i> by
-                            Themesdesign.</p>
+                        <p class="mb-0">© 2023 - OJPMS</p>
                     </div>
                 </div>
             </div>

@@ -33,13 +33,69 @@
                 </div>
                 <div class="scrollbar-sidebar">
                     <div class="app-sidebar__inner">
-                        <ul class="vertical-nav-menu">
+                        <ul class="vertical-nav-menu mt-5">
+
+                            @if (Auth::user()->role_id == 'admin')
+                                <li>
+                                    <a href="/home" class="mm-active">
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html" class="mm-active">
+                                        Companies
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html" class="mm-active">
+                                        Users
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html" class="mm-active">
+                                        Profile
+                                    </a>
+                                </li>
+                            @elseif (Auth::user()->role_id == 'job')
+                                <li>
+                                    <a href="index.html" class="mm-active">
+                                        Apply Jobs
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/create-cv" class="mm-active">
+                                        Create CV
+                                    </a>
+                                </li>
+                            @else
+                                <li>
+                                    <a href="/admin-jobs" class="mm-active">
+                                        Jobs
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/admin-application" class="mm-active">
+                                        Candidate Applications
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/company-profile" class="mm-active">
+                                        Company Profile
+                                    </a>
+                                </li>
+                            @endif
+
                             <li>
-                                <a href="index.html" class="mm-active">
-                                    <i class="metismenu-icon fa fa-home pe-7s-rocket"></i>
-                                    Dashboard Example 1
+                                <a href="{{ route('logout') }}" class="mm-active"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Logout
                                 </a>
                             </li>
+
+                            <!-- Hidden form to handle the logout POST request -->
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf <!-- Laravel CSRF protection -->
+                            </form>
                         </ul>
                     </div>
                 </div>

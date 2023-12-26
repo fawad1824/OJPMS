@@ -1,123 +1,157 @@
 @extends('layouts.web')
 @section('content')
-    <!-- Hero Area Start-->
-    <div class="slider-area ">
-        <div class="single-slider section-overly slider-height2 d-flex align-items-center"
-            data-background="assets/img/hero/about.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="hero-cap text-center">
-                            <h2>UI/UX Designer</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Hero Area End -->
-    <!-- job post company Start -->
-    <div class="job-post-company pt-120 pb-120">
+    <!-- Start home -->
+    <section class="bg-half page-next-level">
+        <div class="bg-overlay"></div>
         <div class="container">
-            <div class="row justify-content-between">
-                <!-- Left Content -->
-                <div class="col-xl-7 col-lg-8">
-                    <!-- job single -->
-                    <div class="single-job-items mb-50">
-                        <div class="job-items">
-                            <div class="company-img company-img-details">
-                                <a href="#"><img src="{{ asset('website/assets/img/icon/job-list1.png') }}" alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="#">
-                                    <h4>Digital Marketer</h4>
-                                </a>
-                                <ul>
-                                    <li>Creative Agency</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                    <li>$3500 - $4000</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- job single End -->
-
-                    <div class="job-post-details">
-                        <div class="post-details1 mb-50">
-                            <!-- Small Section Tittle -->
-                            <div class="small-section-tittle">
-                                <h4>Job Description</h4>
-                            </div>
-                            <p>It is a long established fact that a reader will beff distracted by vbthe creadable content
-                                of a page when looking at its layout. The pointf of using Lorem Ipsum is that it has ahf
-                                mcore or-lgess normal distribution of letters, as opposed to using, Content here content
-                                here making it look like readable.</p>
-                        </div>
-                        <div class="post-details2  mb-50">
-                            <!-- Small Section Tittle -->
-                            <div class="small-section-tittle">
-                                <h4>Required Knowledge, Skills, and Abilities</h4>
-                            </div>
-                            <ul>
-                                <li>System Software Development</li>
-                                <li>Mobile Applicationin iOS/Android/Tizen or other platform</li>
-                                <li>Research and code , libraries, APIs and frameworks</li>
-                                <li>Strong knowledge on software development life cycle</li>
-                                <li>Strong problem solving and debugging skills</li>
-                            </ul>
-                        </div>
-                        <div class="post-details2  mb-50">
-                            <!-- Small Section Tittle -->
-                            <div class="small-section-tittle">
-                                <h4>Education + Experience</h4>
-                            </div>
-                            <ul>
-                                <li>3 or more years of professional design experience</li>
-                                <li>Direct response email experience</li>
-                                <li>Ecommerce website design experience</li>
-                                <li>Familiarity with mobile and web apps preferred</li>
-                                <li>Experience using Invision a plus</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Right Content -->
-                <div class="col-xl-4 col-lg-4">
-                    <div class="post-details3  mb-50">
-                        <!-- Small Section Tittle -->
-                        <div class="small-section-tittle">
-                            <h4>Job Overview</h4>
-                        </div>
-                        <ul>
-                            <li>Posted date : <span>12 Aug 2019</span></li>
-                            <li>Location : <span>New York</span></li>
-                            <li>Vacancy : <span>02</span></li>
-                            <li>Job nature : <span>Full time</span></li>
-                            <li>Salary : <span>$7,800 yearly</span></li>
-                            <li>Application date : <span>12 Sep 2020</span></li>
-                        </ul>
-                        <div class="apply-btn2">
-                            <a href="#" class="btn">Apply Now</a>
-                        </div>
-                    </div>
-                    <div class="post-details4  mb-50">
-                        <!-- Small Section Tittle -->
-                        <div class="small-section-tittle">
-                            <h4>Company Information</h4>
-                        </div>
-                        <span>test</span>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page
-                            when looking at its layout.</p>
-                        <ul>
-                            <li>Name: <span>test </span></li>
-                            <li>Web : <span> .com</span></li>
-                            <li>Email: <span>car@gmail.com</span></li>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="text-center text-white">
+                        <h4 class="text-uppercase title mb-4">Jobs</h4>
+                        <ul class="page-next d-inline-block mb-0">
+                            <li><a href="index.html" class="text-uppercase font-weight-bold">Home</a></li>
+                            <li><a href="#" class="text-uppercase font-weight-bold">Jobs</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- job post company End -->
+    </section>
+    <!-- end home -->
+
+    <!-- JOB DETAILS START -->
+    <section class="section">
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-lg-8 col-md-7">
+                    <div class="job-detail border rounded p-4">
+                        <div class="job-detail-content">
+                            <img src="images/featured-job/img-4.png" alt=""
+                                class="img-fluid float-left mr-md-3 mr-2 mx-auto d-block">
+                            <div class="job-detail-com-desc overflow-hidden d-block">
+                                <h4 class="mb-2"><a href="#" class="text-dark">{{ $jobs->title }}</a></h4>
+                                <p class="text-muted mb-0"><i class="mdi mdi-link-variant mr-2"></i>{{ $jobsCompany->name }}
+                                </p>
+                                <p class="text-muted mb-0"><i class="mdi mdi-map-marker mr-2"></i>{{ $jobs->location }}</p>
+                            </div>
+                        </div>
+
+                        <div class="job-detail-desc mt-4">
+                            <p class="text-muted mb-3">
+                                {{ $jobsCompany->companyinfo }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h5 class="text-dark mt-4">Job Description :</h5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="job-detail border rounded mt-2 p-4">
+                                <div class="job-detail-desc">
+                                    <p class="text-muted mb-3">
+                                        {{ $jobs->description }}
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h5 class="text-dark mt-4">Qualification :</h5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="job-detail border rounded mt-2 p-4">
+                                <div class="job-detail-desc">
+                                    <div class="job-details-desc-item">
+                                        <p class="text-muted mb-2">{{ $jobs->skills }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h5 class="text-dark mt-4">Primary Education :</h5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="job-detail border rounded mt-2 p-4">
+                                <div class="job-detail-desc">
+                                    <div class="job-details-desc-item">
+                                        <p class="text-muted mb-2">{{ $jobs->education }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-5 mt-4 mt-sm-0">
+                    <div class="job-detail border rounded p-4">
+                        <h5 class="text-muted text-center pb-2"><i class="mdi mdi-map-marker mr-2"></i>Location</h5>
+
+                        <div class="job-detail-location pt-4 border-top">
+                            <div class="job-details-desc-item">
+                                <div class="float-left mr-2">
+                                    <i class="mdi mdi-bank text-muted"></i>
+                                </div>
+                                <p class="text-muted mb-2">: {{ $jobsCompany->name }}</p>
+                            </div>
+
+                            <div class="job-details-desc-item">
+                                <div class="float-left mr-2">
+                                    <i class="mdi mdi-email text-muted"></i>
+                                </div>
+                                <p class="text-muted mb-2">: {{ $jobsCompany->email }}</p>
+                            </div>
+
+                            <div class="job-details-desc-item">
+                                <div class="float-left mr-2">
+                                    <i class="mdi mdi-web text-muted"></i>
+                                </div>
+                                <p class="text-muted mb-2">: {{ $jobsCompany->website }}</p>
+                            </div>
+
+                            <div class="job-details-desc-item">
+                                <div class="float-left mr-2">
+                                    <i class="mdi mdi-cellphone-iphone text-muted"></i>
+                                </div>
+                                <p class="text-muted mb-2">: {{ $jobsCompany->name }}</p>
+                            </div>
+
+
+
+                            <div class="job-details-desc-item">
+                                <div class="float-left mr-2">
+                                    <i class="mdi mdi-security text-muted"></i>
+                                </div>
+                                <p class="text-muted mb-2">: {{ $jobs->experience }}.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="job-detail border rounded mt-4">
+                        <a href="#" class="btn btn-primary btn-block">Apply For Job</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- JOB DETAILS END -->
 @endsection

@@ -27,8 +27,6 @@
                 <div class="float-right">
                     <ul class="topbar-list list-unstyled d-flex" style="margin: 11px 0px;">
                         <li class="list-inline-item"><a href="javascript:void(0);">
-
-
                                 @if (Auth::check())
                                     <i class="mdi mdi-account mr-2"></i>
                                     {{ Auth::user()->name }}
@@ -45,15 +43,17 @@
         <div class="container">
             <!-- Logo container-->
             <div>
-                <a href="index.html" class="logo">
-                    <img src="{{ asset('website/images/logo-light.png') }}" alt="" class="logo-light"
+                <a href="/" class="logo">
+                    <h3 class="logo-light" style="color: white"> OJPMS</h3>
+                    <h3 class="logo-dark" style="color: black"> OJPMS</h3>
+                    {{-- <img src="{{ asset('website/images/logo-light.png') }}" alt="" class="logo-light"
                         height="18" />
                     <img src="{{ asset('website/images/logo-dark.png') }}" alt="" class="logo-dark"
-                        height="18" />
+                        height="18" /> --}}
                 </a>
             </div>
             <div class="buy-button">
-                <a href="post-a-job.html" class="btn btn-primary"><i class="mdi mdi-cloud-upload"></i> Post a Job</a>
+                {{-- <a href="post-a-job.html" class="btn btn-primary"><i class="mdi mdi-cloud-upload"></i> Post a Job</a> --}}
             </div><!--end login button-->
             <!-- End Logo container-->
             <div class="menu-extras">
