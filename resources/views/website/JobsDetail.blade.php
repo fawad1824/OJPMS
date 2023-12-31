@@ -20,13 +20,18 @@
     <!-- end home -->
 
     <!-- JOB DETAILS START -->
+
     <section class="section">
+
         <div class="container">
-
-
             <div class="row">
                 <div class="col-lg-8 col-md-7">
                     <div class="job-detail border rounded p-4">
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
                         <div class="job-detail-content">
                             <img src="images/featured-job/img-4.png" alt=""
                                 class="img-fluid float-left mr-md-3 mr-2 mx-auto d-block">
@@ -145,9 +150,19 @@
                         </div>
                     </div>
 
-
+                    @php
+                        $data = DB::table('applyjobs')
+                            ->where('jobid', $jobs->id)
+                            ->first();
+                    @endphp
                     <div class="job-detail border rounded mt-4">
-                        <a href="#" class="btn btn-primary btn-block">Apply For Job</a>
+                        @if (Auth::check() && !$data)
+                            <a href="/apply-job/{{ $jobs->id }}" class="btn btn-primary btn-block">Apply For Job</a>
+                        @elseif(!Auth::check())
+                            <a href="/login" class="btn btn-primary btn-block">Login/register</a>
+                        @elseif($data)
+                            Already Submit
+                        @endif
                     </div>
                 </div>
             </div>

@@ -31,6 +31,7 @@ Route::get('/create-admin-jobs', [HomeController::class, 'CreateadminJobs'])->na
 Route::get('/edit-admin-jobs/{id}', [HomeController::class, 'EditadminJobs'])->name('EditadminJobs');
 Route::post('/add-admin-jobs', [HomeController::class, 'AddadminJobs'])->name('AddadminJobs');
 Route::get('/delete-admin-jobs/{id}', [HomeController::class, 'DeleteadminJobs'])->name('DeleteadminJobs');
+Route::get('/delete-apply-jobs/{id}', [HomeController::class, 'DeleteApplyJobs'])->name('DeleteApplyJobs');
 // Company profile
 Route::get('/company-profile', [HomeController::class, 'companyProfile'])->name('companyProfile');
 Route::post('/add-company-profile', [HomeController::class, 'AddcompanyProfile'])->name('AddcompanyProfile');
@@ -46,8 +47,21 @@ Route::get('/about', [WebsiteController::class, 'about'])->name('about');
 Route::get('/jobs/{id}', [WebsiteController::class, 'GetJobs'])->name('GetJobs');
 
 // Create create-cv
-Route::get('/create-cv', [WebsiteController::class, 'CreateCv'])->name('CreateCv');
-Route::post('/add-create-cv', [WebsiteController::class, 'AddCreateCv'])->name('AddCreateCv');
+Route::get('/create-cv', [HomeController::class, 'CreateCv'])->name('CreateCv');
+Route::get('/create-cv/{id?}', [HomeController::class, 'CreateCv'])->name('CreateCv');
+Route::post('/add-create-cv', [HomeController::class, 'AddCreateCv'])->name('AddCreateCv');
+Route::get('/apply-job/{id}', [HomeController::class, 'ApplyJObs'])->name('ApplyJObs');
+Route::get('/all-job', [HomeController::class, 'AllJObs'])->name('AllJObs');
+Route::get('/condit-job', [HomeController::class, 'condidateJobs'])->name('condidateJobs');
+Route::get('/condit-job/{id}', [HomeController::class, 'DeletedcondidateJobs'])->name('DeletedcondidateJobs');
+Route::get('/condit-job-select', [HomeController::class, 'selectCandidate'])->name('selectCandidate');
+
+
+Route::get('/admin-company', [HomeController::class, 'adminCategory'])->name('adminCategory');
+Route::get('/admin-list', [HomeController::class, 'adminlist'])->name('adminlist');
+Route::get('/admin-jobs-list', [HomeController::class, 'adminJObslist'])->name('adminJObslist');
+Route::get('/admin-profile', [HomeController::class, 'adminProfile'])->name('adminProfile');
+Route::post('/addmin-profile', [HomeController::class, 'AddminProfile'])->name('AddminProfile');
 
 
 Route::get('/verification/verify', [VerificationController::class, 'verify'])->name('verification.verify');

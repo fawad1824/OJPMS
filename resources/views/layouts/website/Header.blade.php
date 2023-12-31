@@ -106,7 +106,7 @@
                             <a href="/contact">contact</a>
                         </li>
                         <li>
-                            <a href="contact.html">Dashboard</a>
+                            <a href="/home">Dashboard</a>
                         </li>
                         <li>
                             <a href="{{ route('logout') }}"

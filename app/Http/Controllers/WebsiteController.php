@@ -13,7 +13,7 @@ class WebsiteController extends Controller
     // webite
     public function HomeIndex()
     {
-        $jobs = JobsAcive::all();
+        $jobs = JobsAcive::where('status', '!=', 'Hire')->get();
         return view('website.Home', compact('jobs'));
     }
     public function companies()
@@ -23,7 +23,7 @@ class WebsiteController extends Controller
     }
     public function FindJobs()
     {
-        $jobs = JobsAcive::all();
+        $jobs = JobsAcive::where('status', '!=', 'Hire')->get();
         return view('website.Jobs', compact('jobs'));
     }
     public function contact()
@@ -39,16 +39,5 @@ class WebsiteController extends Controller
         $jobs = JobsAcive::where('id', $id)->first();
         $jobsCompany = Companymain::where('id', $jobs->companyid)->first();
         return view('website.JobsDetail', compact('jobs', 'jobsCompany'));
-    }
-
-    // create CV
-    public function CreateCv()
-    {
-        $profile = ProfileCV::where('userid', Auth::user()->id)->first();
-        return view('CV.Create', compact('profile'));
-    }
-    public function AddCreateCv(Request $request)
-    {
-        return $request->all();
     }
 }

@@ -42,23 +42,23 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="index.html" class="mm-active">
+                                    <a href="/admin-company" class="mm-active">
                                         Companies
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="index.html" class="mm-active">
-                                        Users
+                                    <a href="/admin-jobs-list" class="mm-active">
+                                        Jobs
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="index.html" class="mm-active">
-                                        Profile
+                                    <a href="/admin-list" class="mm-active">
+                                        Users
                                     </a>
                                 </li>
                             @elseif (Auth::user()->role_id == 'job')
                                 <li>
-                                    <a href="index.html" class="mm-active">
+                                    <a href="/all-job" class="mm-active">
                                         Apply Jobs
                                     </a>
                                 </li>
@@ -74,7 +74,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/admin-application" class="mm-active">
+                                    <a href="/condit-job" class="mm-active">
                                         Candidate Applications
                                     </a>
                                 </li>
@@ -84,6 +84,11 @@
                                     </a>
                                 </li>
                             @endif
+                            <li>
+                                <a href="/admin-profile" class="mm-active">
+                                    Profile
+                                </a>
+                            </li>
 
                             <li>
                                 <a href="{{ route('logout') }}" class="mm-active"

@@ -47,76 +47,61 @@
             </style>
 
 
+
             <div class="row m-2">
                 <div class="col-lg-12">
-                    <h4>Company Profile</h4>
+                    <h4> Profile</h4>
                     @if (session('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}
                         </div>
                     @endif
-
-                    <form action="/add-company-profile" method="POST" enctype="multipart/form-data">
+                    <form action="/addmin-profile" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group mt-5">
                             <label for="">Name</label>
-                            <input value="{{ $company->name ?? '' }}" type="text" name="name" required
-                                class="form-control">
+                            <input value="{{ Auth::user()->name }}" type="text" name="name" class="form-control">
                             <input hidden type="text" name="user_id" value="{{ Auth::user()->id }}" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">Email</label>
-                            <input value="{{ $company->email ?? '' }}" type="email" name="email" required
-                                class="form-control">
+                            <input value="{{ Auth::user()->email }}" type="email" name="email" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="companyInfo">Company info</label>
-                            <textarea id="companyInfo" name="companyinfo" required cols="30" rows="10">{{ $company->companyinfo ?? '' }} </textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Address</label>
-                            <input value="{{ $company->address ?? '' }}" type="text" name="address" required
-                                class="form-control">
+                            <label for="">Phone</label>
+                            <input value="{{ Auth::user()->phone }}" type="tel" name="phone" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">Website</label>
-                            <input value="{{ $company->website ?? '' }}" type="text" name="website" required
-                                class="form-control">
+                            <input value="{{ Auth::user()->website }}" type="text" name="website" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="">Location</label>
-                            <input value="{{ $company->location ?? '' }}" type="text" name="location" required
-                                class="form-control">
+                            <label for="companyInfo">Bio</label>
+                            <textarea id="companyInfo" name="bio" cols="30" rows="10">{{ Auth::user()->bio }} </textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="shortdesc">Short Description</label>
+                            <textarea id="shortdesc" name="shortdesc" cols="30" rows="10">{{ Auth::user()->shortdesc }} </textarea>
+                        </div>
+
                         <div class="form-group">
                             <label for="">Country</label>
-                            <input value="{{ $company->country ?? '' }}" type="text" name="country" required
-                                class="form-control">
+                            <input value="{{ Auth::user()->country }}" type="text" name="country" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">State</label>
-                            <input type="text" value="{{ $company->state ?? '' }}" name="state" required
-                                class="form-control">
+                            <input value="{{ Auth::user()->state }}" type="text" name="state" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="">City</label>
-                            <input type="text" value="{{ $company->city ?? '' }}" name="city" required
-                                class="form-control">
+                            <label for="">Address</label>
+                            <input value="{{ Auth::user()->address }}" type="text" name="address" class="form-control">
                         </div>
+
                         <div class="form-group">
-                            <label for="">logo</label>
+                            <label for="">Profile Image</label>
                             <input type="file" name="image" class="form-control">
                         </div>
-                        <div class="form-group">
-                            <label for="">Employees</label>
-                            <input value="{{ $company->employe ?? '' }}" type="number" name="employee" required
-                                class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Description</label>
-                            <textarea id="companyInfo" name="desc" required cols="30" rows="10">{{ $company->desc ?? '' }}</textarea>
-                        </div>
+
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Updated</button>
                         </div>

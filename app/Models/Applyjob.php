@@ -10,8 +10,6 @@ class Applyjob extends Model
     use HasFactory;
     protected $table = "applyjobs";
     protected $fillable = [
-        'job_id',
-        'user_id',
-        'status'
+        'companyid', 'jobid',    'userid',    'status', 'date',    'desc'
     ];
 }
